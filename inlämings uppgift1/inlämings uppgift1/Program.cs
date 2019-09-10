@@ -7,7 +7,7 @@ namespace inlämings_uppgift1
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            int compnum = rnd.Next(100);
+            int compnum = rnd.Next(1, 100);
             bool status = false;
             int usercount = 0;
 
@@ -24,7 +24,7 @@ namespace inlämings_uppgift1
                 if (usernum == compnum)
                 {
                     Console.WriteLine("Congrats you got the right number");
-                    Console.WriteLine("Number of tries: "+usercount);
+                    Console.WriteLine("You did it on: " + usercount + " tries");
                     status = true;
                 }
                 else
@@ -38,10 +38,6 @@ namespace inlämings_uppgift1
                         Console.WriteLine("The number was to high");
                     }
                 }
-                    
-
-
-
             }
         }
     }
