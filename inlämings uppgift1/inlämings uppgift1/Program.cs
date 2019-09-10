@@ -7,22 +7,45 @@ namespace inlämings_uppgift1
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            int num = rnd.Next(100);
-            Boolean status = false;
+            int compnum = rnd.Next(100);
+            bool status = false;
+            int usercount = 0;
 
-            
+
             Console.WriteLine("Guess a number between 1 and 100");
 
-            while( status == false)
+            while (!status)
             {
-                Console.WriteLine(Please enter a number: );
-
+                Console.WriteLine("Please enter a number: ");
+                usercount++;
                 string input = Console.ReadLine();
-                
+
+                int usernum = int.Parse(input);
+                if (usernum == compnum)
+                {
+                    Console.WriteLine("Congrats you got the right number");
+                    Console.WriteLine("Number of tries: "+usercount);
+                    status = true;
+                }
+                else
+                {
+                    if (usernum < compnum)
+                    {
+                        Console.WriteLine("The number was to low");
+                    }
+                    else if(usernum > compnum)
+                    {
+                        Console.WriteLine("The number was to high");
+                    }
+                }
+                    
 
 
 
             }
+        }
+    }
+}
             
 
 
